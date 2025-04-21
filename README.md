@@ -10,7 +10,6 @@ This game is perfect for basketball lovers who enjoy testing their memory skills
 ## 🚀 Live Demo
 
 Check it out here: [NBA Memory Game](https://github.com/DQuaya/NBA-Memory)  
-*(Optional: Add a GitHub Pages / Netlify / Vercel link if hosted)*
 
 ---
 
