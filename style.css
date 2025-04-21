@@ -42,7 +42,7 @@ button {
 .win {
     border-radius: 5px;
     box-shadow: 0 25px 50px rgb(33 33 33 / 25%);
-    background: rgb(255, 255, 255);
+    background: rgb(0, 0, 0);
     border: 3px solid rgb(13, 0, 255);
     transition: transform .6s cubic-bezier(0.4, 0.0, 0.2, 1);
     backface-visibility: hidden;
@@ -82,7 +82,7 @@ button {
     user-select: none;
     text-align: center;
     line-height: 100px;
-    background: #e90303;
+    background: #000000;
 }
 .card.flipped .card-front {
     transform: rotateY(180deg) rotateZ(50deg);
@@ -132,4 +132,12 @@ header{
 
 header h1{
     color: white;
+}
+
+.card-back img {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    display: block;
+    margin: 0 auto;
 }

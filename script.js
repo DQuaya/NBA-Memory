@@ -67,7 +67,8 @@ const generateGame = () => {
     <div class="card">
         <div class="card-front"></div>
         <div class="card-back">
-            ${item.startsWith('http') ? `<img src="${item}" alt="card image" />` : item}
+            ${item.startsWith('http') ? `<img src="${item}" alt="card image" style="width: 70px; height: 70px; object-fit: contain; display: block; margin: 0 auto; margin-top: 15px;" />
+` : item}
         </div>
     </div>
 `).join('')}
