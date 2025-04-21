@@ -30,7 +30,5 @@ Check it out here: [NBA Memory Game](https://github.com/DQuaya/NBA-Memory)
 
 ---
 
-## 📸 Screenshots  
-*(Optional — Add a screenshot to show what it looks like)*  
-```md
-![NBA Memory Screenshot](path/to/screenshot.png)
+## 📸 Screenshots   
+![NBA Memory Screenshot](/Screenshot%202025-04-20%20at%2011.26.45 PM.png)
