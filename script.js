@@ -6,6 +6,8 @@ const selectors = {
     start: document.querySelector('button'),
     win: document.querySelector('.win')
 }
+//  ^^^^ Right here I am storing the references to some of the elements in my HTML so that I can update them
+// Coded by DonQuaya
 
 const state = {
     gameStarted: false,
@@ -14,7 +16,10 @@ const state = {
     totalTime: 0,
     loop: null
 }
-//creating arrow function that shuffles the cards each game
+// ^^^^ Right here I am keeping track of the current game status. I am tracking how many cards are flips, how many attempts is taken and how much time is taken.
+// Coded by DonQuaya
+
+
 const shuffle = array => {
     const clonedArray = [...array]
 
@@ -29,7 +34,10 @@ const shuffle = array => {
     return clonedArray
 }
 
-//arrow function for picks 
+// ^^^^ Right here I created an arrow function that randomly shuffles the array, this to make sure the card positions change every game. 
+// Coded by DonQuaya
+
+
 const pickRandom = (array, items) => {
     const clonedArray = [...array]
     const randomPicks = []
@@ -43,13 +51,15 @@ const pickRandom = (array, items) => {
 
     return randomPicks
 }
-//assigning logos used in game
+//^^^^ Right here I created a arrow function that randomly picks a number of items from the array. This is what I used to select the logos
+// Coded by Donquaya
 
 const getCardValue = (card) => {
     const img = card.querySelector('.card-back img')
     return img ? img.src : card.querySelector('.card-back').textContent.trim()
 }
-
+// ^^^^ Right here I created a function to get the actual value of the card by checking the image sources, this way the game can tell whether the two cards selected are a match 
+// Coded by DonQuaya
 const generateGame = () => {
     const dimensions = selectors.board.getAttribute('data-dimension')  
 
@@ -79,7 +89,11 @@ const generateGame = () => {
 
     selectors.board.replaceWith(parser.querySelector('.board'))
 }
-//function for the start of the game
+
+// ^^^^ Right here I created the function that actually builds the game.  Checks the Board size being that it has to be a even Number. It picks the logos, double and shuffle to cards to that the game is set up correctly.
+// Coded by DonQuaya
+
+
 const startGame = () => {
     state.gameStarted = true
     selectors.start.classList.add('disabled')
@@ -91,7 +105,10 @@ const startGame = () => {
         selectors.timer.innerText = `Time: ${state.totalTime} sec`
     }, 1000)
 }
-//created function that flips incorrect cards back over
+// ^^^^ Right here I created a function that starts the timer so that the game is marked as started.  It also updated the move counter and the timer every second.
+// Coded by DonQuaya
+
+
 const flipBackCards = () => {
     document.querySelectorAll('.card:not(.matched)').forEach(card => {
         card.classList.remove('flipped')
@@ -99,6 +116,8 @@ const flipBackCards = () => {
 
     state.flippedCards = 0
 }
+// ^^^^ Right here I created a function that flips over an unmatched card after about a second if the player selects two cards that do not match.
+// Coded by DonQuaya
 
 const flipCard = card => {
     state.flippedCards++
@@ -140,7 +159,8 @@ const flipCard = card => {
         }, 1000)
     }
 }
-
+// ^^^^ Right here I created a function that handles the flipping logic meaning it starts the game timer on first flip, increases the move counter and marks successful matches as well as notifies when all matches are found.
+// Coded by DonQuaya
 const attachEventListeners = () => {
     document.addEventListener('click', event => {
         const eventTarget = event.target
@@ -154,5 +174,12 @@ const attachEventListeners = () => {
     })
 }
 
+// ^^^^ Right here I created a function that listens for clicks on the cards and the start button. Basically if a card is click it calls the flipCard and if the start button is clicked, it starts the game.
+// Coded by DonQuaya
+
+
 generateGame()
 attachEventListeners()
+
+// ^^^^ Right here I am calling the game. This this runs the game by building it and enabling the click handlers.
+// Coded by Quaya
